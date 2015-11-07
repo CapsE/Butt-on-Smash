@@ -26,6 +26,10 @@ public class GameController : MonoBehaviour {
 
     private bool end = false;
     private bool drehbool = false;
+
+	public delegate void SkullMovedEventHandler(float value);
+	public static event SkullMovedEventHandler SkullMoved;
+
 	// Use this for initialization
 	void Start () {
 	

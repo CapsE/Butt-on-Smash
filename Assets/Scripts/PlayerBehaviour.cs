@@ -20,7 +20,7 @@ public class PlayerBehaviour : MonoBehaviour
             for(int i = 1; i<= 11; i=i+2){
                 if (Input.GetKeyDown("joystick "+ i + " button 4"))    //LB
                 {
-                    Debug.Log("PLAYER 1 Left Bumper");
+                    Debug.Log("PLAYER 1 Left Bumper " + Input.GetAxis("joystick " + i + " Up"));
                 }
                 if (Input.GetKeyDown("joystick "+ i + " button 5"))    //RB
                 {
@@ -33,6 +33,10 @@ public class PlayerBehaviour : MonoBehaviour
                 if (Input.GetAxis("joystick "+ i +  " Right Trigger") == 1)    //RT
                 {
                     Debug.Log("joystick 1 Right Trigger");
+                }
+                if (Input.GetAxis("joystick " + i + " Up") == 1)    //RT
+                {
+                    //Debug.Log("PLAYER 1 Up");
                 }
 
 

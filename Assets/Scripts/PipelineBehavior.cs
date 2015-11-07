@@ -12,6 +12,7 @@ public class PipelineBehavior : MonoBehaviour {
     public float minArea = -4.324f;
     public GameObject ButtonArea;
     public int Player;
+    public float speed;
 
 	// Use this for initialization
 	void Start () {

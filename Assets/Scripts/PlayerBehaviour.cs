@@ -4,7 +4,8 @@ using System.Collections;
 public class PlayerBehaviour : MonoBehaviour
 {
     public int player;
-
+    public GameObject[] projectile;
+    public float force;
 
     // Use this for initialization
     void Start()
@@ -32,6 +33,8 @@ public class PlayerBehaviour : MonoBehaviour
                 }
                 if (Input.GetAxis("joystick "+ i +  " Right Trigger") == 1)    //RT
                 {
+                    GameObject wurfdings = Instantiate(projectile[0]) as GameObject;
+                    wurfdings.GetComponent<Rigidbody2D>().AddForce(wurfdings.transform.right * force);
                     Debug.Log("joystick 1 Right Trigger");
                 }
                 if (Input.GetAxis("joystick " + i + " Up") == 1)    //RT
@@ -57,7 +60,7 @@ public class PlayerBehaviour : MonoBehaviour
                 }
                 if (Input.GetAxis("joystick " + i + " Left Trigger") == 1)    //LT
                 {
-                    Debug.Log("PLAYER 2 Left Bumper");
+                    Debug.Log("PLAYER 2 Left Trigger");
                 }
                 if (Input.GetAxis("joystick " + i + " Right Trigger") == 1)    //RT
                 {

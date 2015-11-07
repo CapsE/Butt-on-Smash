@@ -23,6 +23,8 @@ public class PipelineBehavior : MonoBehaviour {
 	void FixedUpdate () {
         time += Time.deltaTime;
         if (time >= intervall) {
+            //Debug.Log(Input.GetJoystickNames().Length);
+            
             time = 0;
             int buttonnr = Random.Range(0, 4);
             GameObject button = Instantiate(buttons[buttonnr]) as GameObject;
@@ -34,7 +36,7 @@ public class PipelineBehavior : MonoBehaviour {
 
     void Update() {
         if(player == 1){
-        if (Input.GetKeyDown("joystick 1 button 0"))    //A
+        if (Input.GetKeyDown("joystick button 0"))    //A
         {
             Debug.Log("joy 1 but 0");
             foreach(GameObject c in activeButtons){

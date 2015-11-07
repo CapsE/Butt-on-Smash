@@ -18,6 +18,7 @@ public class HitboxBehavior : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
+        GameController gc = GameObject.Find("Main Camera").GetComponent<GameController>();
         if (topf == 0)
         {
             if (coll.gameObject.name == "player2wurf")
@@ -25,7 +26,17 @@ public class HitboxBehavior : MonoBehaviour {
                 Debug.Log("Kollision an Topf Links " + position + " mit level " + coll.gameObject.GetComponent<ItemBehaviour>().level);
                 Debug.Log(coll.gameObject.name);
                 //GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
-                Destroy(coll.gameObject); //TODO effekt?
+                
+                if (!GameObject.Find("Player").GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("blocken")) {
+                    if (coll.gameObject.GetComponent<ItemBehaviour>().level == 1) {
+                        gc.MoveSkull(2);
+                        gc.MoveSkull(2);
+                        gc.MoveSkull(2);
+                        gc.MoveSkull(2);
+                        gc.MoveSkull(2);
+                    }
+                }
+                Destroy(coll.gameObject); //TODO effekt?   
             }
         }
         else {
@@ -33,6 +44,18 @@ public class HitboxBehavior : MonoBehaviour {
             {
                 Debug.Log("Kollision an Topf Rechts " + position + " mit level " + coll.gameObject.GetComponent<ItemBehaviour>().level);
                 Debug.Log(coll.gameObject.name);
+                
+                if (!GameObject.Find("Player (1)").GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("blocken2"))
+                {
+                    if (coll.gameObject.GetComponent<ItemBehaviour>().level == 1)
+                    {
+                        gc.MoveSkull(1);
+                        gc.MoveSkull(1);
+                        gc.MoveSkull(1);
+                        gc.MoveSkull(1);
+                        gc.MoveSkull(1);
+                    }
+                }
                 Destroy(coll.gameObject); //TODO effekt?
             }
         }

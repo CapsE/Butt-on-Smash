@@ -34,7 +34,7 @@ public class PlayerBehaviour : MonoBehaviour
                 }
                 if (Input.GetKeyDown("joystick "+ i + " button 5"))    //RB
                 {
-                    gameObject.GetComponent<Animator>().Play("blocken2");
+                    
                     Debug.Log("PLAYER 1 Right Bumper");
                 }
                 if (Input.GetAxis("joystick " + i + " Left Trigger") == 1)    //LT
@@ -92,7 +92,7 @@ public class PlayerBehaviour : MonoBehaviour
                 }
                 if (Input.GetAxis("joystick "+ i +  " Right Trigger") == 1)    //RT
                 {
-                   
+                    gameObject.GetComponent<Animator>().Play("blocken");
                 }
                 if (Input.GetAxis("joystick " + i + " Up") >= 1)    //RT
                 {
@@ -171,7 +171,22 @@ public class PlayerBehaviour : MonoBehaviour
                 }
                 if (Input.GetAxis("joystick " + i + " Right Trigger") == 1)    //RT
                 {
+                    gameObject.GetComponent<Animator>().Play("blocken2");
                     Debug.Log("joystick 2 Right Trigger");
+
+                    float input = Input.GetAxis("joystick " + i + " Up");
+                    if (input <= 0.3 && input >= -0.3)
+                    {
+                            //NORMAL
+                    }
+                    else if (input <= -0.3)
+                    {
+                            //OBEN
+                    }
+                    else if (input >= 0.3)
+                    {
+                            //UNTEN
+                    }
                 }
 
 

@@ -69,7 +69,7 @@ public class PipelineBehavior : MonoBehaviour {
                 if (Input.GetKeyDown("joystick " + i +" button 0"))    //A
                 {
 
-                    Debug.Log("player 1 but 0");
+                   // Debug.Log("player 1 but 0");
                     foreach (GameObject c in activeButtons)
                     {
                         if (c.GetComponent<ButtonBehavior>().type == "A")
@@ -112,7 +112,7 @@ public class PipelineBehavior : MonoBehaviour {
 
                 if (Input.GetKeyDown("joystick " + i + " button 1"))    //B
                 {
-                    Debug.Log("player 1 but 1");
+                    //Debug.Log("player 1 but 1");
                     foreach (GameObject c in activeButtons)
                     {
                         if (c.GetComponent<ButtonBehavior>().type == "B")
@@ -153,7 +153,7 @@ public class PipelineBehavior : MonoBehaviour {
                 }
                 if (Input.GetKeyDown("joystick " + i + " button 2"))    //X
                 {
-                    Debug.Log("player 1 but 2");
+                    //Debug.Log("player 1 but 2");
                     foreach (GameObject c in activeButtons)
                     {
                         if (c.GetComponent<ButtonBehavior>().type == "X")
@@ -194,7 +194,7 @@ public class PipelineBehavior : MonoBehaviour {
                 }
                 if (Input.GetKeyDown("joystick " + i + " button 3"))    //Y
                 {
-                    Debug.Log("palyer 1 but 3");
+                    //Debug.Log("palyer 1 but 3");
                     foreach (GameObject c in activeButtons)
                     {
                         if (c.GetComponent<ButtonBehavior>().type == "Y")
@@ -242,7 +242,7 @@ public class PipelineBehavior : MonoBehaviour {
             {
                 if (Input.GetKeyDown("joystick " + i + " button 0"))    //A
                 {
-                    Debug.Log("Player 2 but 0");
+                    //Debug.Log("Player 2 but 0");
                     foreach (GameObject c in activeButtons)
                     {
                         if (c.GetComponent<ButtonBehavior>().type == "A")
@@ -283,7 +283,7 @@ public class PipelineBehavior : MonoBehaviour {
                 }
                 if (Input.GetKeyDown("joystick " + i + " button 1"))    //B
                 {
-                    Debug.Log("player 2 but 1");
+                    //Debug.Log("player 2 but 1");
                     foreach (GameObject c in activeButtons)
                     {
                         if (c.GetComponent<ButtonBehavior>().type == "B")
@@ -324,7 +324,7 @@ public class PipelineBehavior : MonoBehaviour {
                 }
                 if (Input.GetKeyDown("joystick " + i + " button 2"))    //X
                 {
-                    Debug.Log("player 2 but 2");
+                    //Debug.Log("player 2 but 2");
                     foreach (GameObject c in activeButtons)
                     {
                         if (c.GetComponent<ButtonBehavior>().type == "X")
@@ -365,7 +365,7 @@ public class PipelineBehavior : MonoBehaviour {
                 }
                 if (Input.GetKeyDown("joystick " + i + " button 3"))    //Y
                 {
-                    Debug.Log("player 2 but 3");
+                    //Debug.Log("player 2 but 3");
                     foreach (GameObject c in activeButtons)
                     {
                         if (c.GetComponent<ButtonBehavior>().type == "Y")

@@ -22,6 +22,12 @@ public class PipelineBehavior : MonoBehaviour {
 
     public GameObject effect;
 
+    public delegate void ButtonHitEventHandler();
+    public event ButtonHitEventHandler ButtonHit;
+
+    public delegate void ButtonMissedEventHandler();
+    public event ButtonMissedEventHandler ButtonMissed;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -71,6 +77,12 @@ public class PipelineBehavior : MonoBehaviour {
                             if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                             {
                                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                                //Trigger Event
+                                if (ButtonHit != null)
+                                {
+                                    ButtonHit();
+                                }
+                     
                                 Effect a = new Effect(c.transform.position, effect, 0.5f);
                                 activeButtons.Remove(c);
                                 Destroy(c);
@@ -88,8 +100,13 @@ public class PipelineBehavior : MonoBehaviour {
                     if (!hit)
                     {
                         misses++;
+                        if (ButtonMissed != null)
+                        {
+                            ButtonMissed();
+                        }
                         currentCombo = 0;
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
+                        ButtonArea.GetComponent<ShakeBehaviour>().Shake(0.4f);
                     }
                 }
 
@@ -103,6 +120,11 @@ public class PipelineBehavior : MonoBehaviour {
                             if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                             {
                                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                                //Trigger Event
+                                if (ButtonHit != null)
+                                {
+                                    ButtonHit();
+                                }
                                 Effect a = new Effect(c.transform.position, effect, 0.5f);
                                 activeButtons.Remove(c);
                                 Destroy(c);
@@ -120,8 +142,13 @@ public class PipelineBehavior : MonoBehaviour {
                     if (!hit)
                     {
                         misses++;
+                        if (ButtonMissed != null)
+                        {
+                            ButtonMissed();
+                        }
                         currentCombo = 0;
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
+                        ButtonArea.GetComponent<ShakeBehaviour>().Shake(0.4f);
                     }
                 }
                 if (Input.GetKeyDown("joystick " + i + " button 2"))    //X
@@ -134,6 +161,11 @@ public class PipelineBehavior : MonoBehaviour {
                             if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                             {
                                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                                //Trigger Event
+                                if (ButtonHit != null)
+                                {
+                                    ButtonHit();
+                                }
                                 Effect a = new Effect(c.transform.position, effect, 0.5f);
                                 activeButtons.Remove(c);
                                 Destroy(c);
@@ -151,8 +183,13 @@ public class PipelineBehavior : MonoBehaviour {
                     if (!hit)
                     {
                         misses++;
+                        if (ButtonMissed != null)
+                        {
+                            ButtonMissed();
+                        }
                         currentCombo = 0;
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
+                        ButtonArea.GetComponent<ShakeBehaviour>().Shake(0.4f);
                     }
                 }
                 if (Input.GetKeyDown("joystick " + i + " button 3"))    //Y
@@ -165,6 +202,11 @@ public class PipelineBehavior : MonoBehaviour {
                             if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                             {
                                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                                //Trigger Event
+                                if (ButtonHit != null)
+                                {
+                                    ButtonHit();
+                                }
                                 Effect a = new Effect(c.transform.position, effect, 0.5f);
                                 activeButtons.Remove(c);
                                 Destroy(c);
@@ -182,8 +224,13 @@ public class PipelineBehavior : MonoBehaviour {
                     if (!hit)
                     {
                         misses++;
+                        if (ButtonMissed != null)
+                        {
+                            ButtonMissed();
+                        }
                         currentCombo = 0;
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
+                        ButtonArea.GetComponent<ShakeBehaviour>().Shake(0.4f);
                     }
                 }
 
@@ -203,6 +250,11 @@ public class PipelineBehavior : MonoBehaviour {
                             if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                             {
                                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                                //Trigger Event
+                                if (ButtonHit != null)
+                                {
+                                    ButtonHit();
+                                }
                                 Effect a = new Effect(c.transform.position, effect, 0.5f);
                                 activeButtons.Remove(c);
                                 Destroy(c);
@@ -220,8 +272,13 @@ public class PipelineBehavior : MonoBehaviour {
                     if (!hit)
                     {
                         misses++;
+                        if (ButtonMissed != null)
+                        {
+                            ButtonMissed();
+                        }
                         currentCombo = 0;
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
+                        ButtonArea.GetComponent<ShakeBehaviour>().Shake(0.4f);
                     }
                 }
                 if (Input.GetKeyDown("joystick " + i + " button 1"))    //B
@@ -234,6 +291,11 @@ public class PipelineBehavior : MonoBehaviour {
                             if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                             {
                                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                                //Trigger Event
+                                if (ButtonHit != null)
+                                {
+                                    ButtonHit();
+                                }
                                 Effect a = new Effect(c.transform.position, effect, 0.5f);
                                 activeButtons.Remove(c);
                                 Destroy(c);
@@ -251,8 +313,13 @@ public class PipelineBehavior : MonoBehaviour {
                     if (!hit)
                     {
                         misses++;
+                        if (ButtonMissed != null)
+                        {
+                            ButtonMissed();
+                        }
                         currentCombo = 0;
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
+                        ButtonArea.GetComponent<ShakeBehaviour>().Shake(0.4f);
                     }
                 }
                 if (Input.GetKeyDown("joystick " + i + " button 2"))    //X
@@ -265,6 +332,11 @@ public class PipelineBehavior : MonoBehaviour {
                             if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                             {
                                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                                //Trigger Event
+                                if (ButtonHit != null)
+                                {
+                                    ButtonHit();
+                                }
                                 Effect a = new Effect(c.transform.position, effect, 0.5f);
                                 activeButtons.Remove(c);
                                 Destroy(c);
@@ -282,8 +354,13 @@ public class PipelineBehavior : MonoBehaviour {
                     if (!hit)
                     {
                         misses++;
+                        if (ButtonMissed != null)
+                        {
+                            ButtonMissed();
+                        }
                         currentCombo = 0;
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
+                        ButtonArea.GetComponent<ShakeBehaviour>().Shake(0.4f);
                     }
                 }
                 if (Input.GetKeyDown("joystick " + i + " button 3"))    //Y
@@ -296,6 +373,11 @@ public class PipelineBehavior : MonoBehaviour {
                             if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                             {
                                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                                //Trigger Event
+                                if (ButtonHit != null)
+                                {
+                                    ButtonHit();
+                                }
                                 Effect a = new Effect(c.transform.position, effect, 0.5f);
                                 activeButtons.Remove(c);
                                 Destroy(c);
@@ -314,7 +396,12 @@ public class PipelineBehavior : MonoBehaviour {
                     {
                         misses++;
                         currentCombo = 0;
+                        if (ButtonMissed != null)
+                        {
+                            ButtonMissed();
+                        }
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
+                        ButtonArea.GetComponent<ShakeBehaviour>().Shake(0.4f);
                     }
                 }
             }

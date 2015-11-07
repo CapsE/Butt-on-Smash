@@ -26,6 +26,8 @@ public class GameController : MonoBehaviour {
     public GameObject player1;
     public GameObject player2;
 
+    public GameObject lightningStrikeEffect;
+
     private bool end = false;
     private bool drehbool = false;
 
@@ -116,12 +118,16 @@ public class GameController : MonoBehaviour {
         if (Player == 1)
         {
             endText.GetComponent<TextMesh>().text = "spieler i wird verschont";
-               
+            Effect e = new Effect(player2.transform.position, lightningStrikeEffect, 4);
+            player2.GetComponent<Animator>().Play("Sterben");
+            Debug.Break();
         }
         else
         {
             endText.GetComponent<TextMesh>().text = "spieler ii wird verschont";
-            
+            Effect e = new Effect(player1.transform.position, lightningStrikeEffect, 4);
+            player1.GetComponent<Animator>().Play("Sterben");
+            Debug.Break();
         }
         newgametext.GetComponent<TextMesh>().text = "start zum neustart"; 
         comboText2.GetComponent<TextMesh>().text = "max combo";

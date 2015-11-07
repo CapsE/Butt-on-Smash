@@ -45,7 +45,7 @@ public class RainBehaviour : MonoBehaviour {
 
 	private void SkullMoved(float value){
 		value = Mathf.Abs (value);
-		if (value >= 0.5f) {
+		if (value >= 0.75f) {
 			currentArray = 1;
 			lightningChance = lightningChanceHigh;
 			gameObject.GetComponent<AudioSource>().pitch = 1.5f;
@@ -75,7 +75,7 @@ public class RainBehaviour : MonoBehaviour {
 			}
 		}
 		if (Random.Range (0.0f, 100.0f) <= lightningChance) {
-			Effect e = new Effect(transform.position, lightningEffect, 0.3f);
+			Effect e = new Effect(new Vector3(1,-1.4f,0.5f), lightningEffect, 0.3f);
 			Effect t = new Effect(transform.position, thunderEffect, 2.3f);
 		}
 	}

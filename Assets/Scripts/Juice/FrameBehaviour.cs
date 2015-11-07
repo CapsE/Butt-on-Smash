@@ -10,8 +10,19 @@ public class FrameBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        transform.parent.gameObject.GetComponent<PipelineBehavior>().ButtonHit += ButtonHit;
+        transform.parent.gameObject.GetComponent<PipelineBehavior>().ButtonMissed += ButtonMissed;
 	}
+
+    private void ButtonHit()
+    {
+        Increase();
+    }
+
+    private void ButtonMissed()
+    {
+        Set(0);
+    }
 	
 	// Update is called once per frame
 	void Update () {

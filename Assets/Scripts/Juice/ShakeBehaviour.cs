@@ -38,10 +38,18 @@ public class ShakeBehaviour : MonoBehaviour {
 	}
 
 	public void Shake(float seconds, float amount = 1.0f){
-		this.amount = amount;
-		prevRotation = transform.rotation;
-		prevPosition = transform.position;
-		stopTime = Time.realtimeSinceStartup + seconds;
-		shaking = true;
+        if (!shaking)
+        {
+            this.amount = amount;
+            prevRotation = transform.rotation;
+            prevPosition = transform.position;
+            stopTime = Time.realtimeSinceStartup + seconds;
+            shaking = true;
+        }
+        else
+        {
+            stopTime = Time.realtimeSinceStartup + seconds;
+        }
+        
 	}
 }

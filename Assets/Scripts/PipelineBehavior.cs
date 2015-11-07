@@ -20,6 +20,8 @@ public class PipelineBehavior : MonoBehaviour {
     private int hits;
     private int misses;
 
+    public GameObject effect;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -64,6 +66,7 @@ public class PipelineBehavior : MonoBehaviour {
                     if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                     {
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                        Effect a = new Effect(c.transform, effect, 0.5f);
                         activeButtons.Remove(c);
                         Destroy(c);
                         hit = true;
@@ -93,6 +96,7 @@ public class PipelineBehavior : MonoBehaviour {
                     if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                     {
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                        Effect a = new Effect(c.transform, effect, 0.5f);
                         activeButtons.Remove(c);
                         Destroy(c);
                         hit = true;
@@ -123,6 +127,7 @@ public class PipelineBehavior : MonoBehaviour {
                     if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                     {
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                        Effect a = new Effect(c.transform, effect, 0.5f);
                         activeButtons.Remove(c);
                         Destroy(c);
                         hit = true;
@@ -153,6 +158,7 @@ public class PipelineBehavior : MonoBehaviour {
                     if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                     {
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                        Effect a = new Effect(c.transform, effect, 0.5f);
                         activeButtons.Remove(c);
                         Destroy(c);
                         hit = true;
@@ -186,6 +192,7 @@ public class PipelineBehavior : MonoBehaviour {
                         if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                         {
                             GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                            Effect a = new Effect(c.transform, effect, 0.5f);
                             activeButtons.Remove(c);
                             Destroy(c);
                             hit = true;
@@ -216,6 +223,7 @@ public class PipelineBehavior : MonoBehaviour {
                         if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                         {
                             GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                            Effect a = new Effect(c.transform, effect, 0.5f);
                             activeButtons.Remove(c);
                             Destroy(c);
                             hit = true;
@@ -246,6 +254,7 @@ public class PipelineBehavior : MonoBehaviour {
                         if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                         {
                             GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                            Effect a = new Effect(c.transform, effect, 0.5f);
                             activeButtons.Remove(c);
                             Destroy(c);
                             hit = true;
@@ -276,6 +285,7 @@ public class PipelineBehavior : MonoBehaviour {
                         if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                         {
                             GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                            Effect a = new Effect(c.transform, effect, 0.5f);
                             activeButtons.Remove(c);
                             Destroy(c);
                             hit = true;

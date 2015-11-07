@@ -3,7 +3,8 @@ using System.Collections;
 
 public class ShowItemBehavior : MonoBehaviour {
     public GameObject pipeline;
-    public int currentitem = 0; //Value represents current Level of Players Item, 0 means no Item 
+    public int currentitem = 0; //Value represents current Level of Players Item, 0 means no Item
+    public int itemcount = 0;
     public Sprite level0;
     public Sprite level1;
     public Sprite level2;
@@ -23,6 +24,8 @@ public class ShowItemBehavior : MonoBehaviour {
 
         if (5 <= comb && comb <= 9 && currentitem < 1)
         {
+            itemcount = 1;
+            currentitem++;
             Debug.Log("Item Level Up 1");
             currentitem = 1;
             GetComponent<SpriteRenderer>().sprite = level1;

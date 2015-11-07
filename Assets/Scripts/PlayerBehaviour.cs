@@ -6,7 +6,7 @@ public class PlayerBehaviour : MonoBehaviour
     public int player;
     public GameObject[] projectile;
     public float force;
-    public int itemcount = 1;
+    //public int itemcount = 1;
     private float time;
 
     // Use this for initialization
@@ -32,13 +32,27 @@ public class PlayerBehaviour : MonoBehaviour
                 }
                 if (Input.GetAxis("joystick " + i + " Left Trigger") == 1)    //LT
                 {
-                    if (itemcount >= 1)
+                    if (GameObject.Find("ShowItem").GetComponent<ShowItemBehavior>().itemcount >= 1)
                     {
+                        Debug.Log("WURF");
                         
                         if (time >= 0.5)
                         {
                             time = 0;
                             GameObject wurfdings = Instantiate(projectile[0]) as GameObject;
+                            int level = GameObject.Find("ShowItem").GetComponent<ShowItemBehavior>().currentitem;
+                            if (level == 1) {
+                                wurfdings.GetComponent<SpriteRenderer>().sprite = GameObject.Find("ShowItem").GetComponent<ShowItemBehavior>().level1;
+                            }
+                            else if (level == 2)
+                            {
+                                wurfdings.GetComponent<SpriteRenderer>().sprite = GameObject.Find("ShowItem").GetComponent<ShowItemBehavior>().level2;
+                            }
+                            else if (level == 3)
+                            {
+                                wurfdings.GetComponent<SpriteRenderer>().sprite = GameObject.Find("ShowItem").GetComponent<ShowItemBehavior>().level3;
+                            }
+                            
                             float input = Input.GetAxis("joystick " + i + " Up");
                             if (input <= 0.3 && input >= -0.3)
                             {
@@ -58,7 +72,8 @@ public class PlayerBehaviour : MonoBehaviour
                             
                             wurfdings.GetComponent<ItemBehaviour>().floating = true;
                             Debug.Log("joystick 1 Right Trigger");
-                            itemcount--;
+                            GameObject.Find("ShowItem").GetComponent<ShowItemBehavior>().currentitem = 0;
+                            GameObject.Find("ShowItem").GetComponent<ShowItemBehavior>().itemcount--;
                         }
                         Debug.Log("PLAYER 1 Left Trigger");
                     }

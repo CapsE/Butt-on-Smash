@@ -4,6 +4,7 @@ using System.Collections;
 public class ItemBehaviour : MonoBehaviour {
     float speed = 30f;
     public bool floating;
+    public short level = 1;
 
 
 	// Use this for initialization

@@ -74,12 +74,12 @@ public class GameController : MonoBehaviour {
                 }
 
             }
-            if (Input.GetKeyDown("joystick 1 button 7")) {
-                Application.LoadLevel(0);
-            }
-            if (Input.GetKeyDown("joystick 2 button 7"))
+            for (int i = 1; i <= 11; i++)
             {
-                Application.LoadLevel(0);
+                if (Input.GetKeyDown("joystick " + i +" button 7"))
+                {
+                    Application.LoadLevel(0);
+                }
             }
         }
 	}
@@ -121,7 +121,7 @@ public class GameController : MonoBehaviour {
             endText.GetComponent<TextMesh>().text = "spieler ii wird verschont";
             
         }
-        newgametext.GetComponent<TextMesh>().text = "a zum neustart"; 
+        newgametext.GetComponent<TextMesh>().text = "start zum neustart"; 
         comboText2.GetComponent<TextMesh>().text = "max combo";
         number21.GetComponent<TextMesh>().text = "" + PipelineRight.GetComponent<PipelineBehavior>().maxCombo.ToString()[0];
         if (PipelineRight.GetComponent<PipelineBehavior>().maxCombo.ToString().Length >= 2)

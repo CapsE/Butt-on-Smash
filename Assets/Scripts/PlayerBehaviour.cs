@@ -32,12 +32,13 @@ public class PlayerBehaviour : MonoBehaviour
                 }
                 if (Input.GetAxis("joystick " + i + " Left Trigger") == 1)    //LT
                 {
-                    if (GameObject.Find("ShowItem").GetComponent<ShowItemBehavior>().itemcount >= 1)
+                    if (GameObject.Find("ShowItem").GetComponent<ShowItemBehavior>().itemcount == 1)
                     {
-                        Debug.Log("WURF");
+                        
                         
                         if (time >= 0.5)
                         {
+                            Debug.Log("WURF");
                             time = 0;
                             GameObject wurfdings = Instantiate(projectile[0]) as GameObject;
                             int level = GameObject.Find("ShowItem").GetComponent<ShowItemBehavior>().currentitem;
@@ -73,9 +74,11 @@ public class PlayerBehaviour : MonoBehaviour
                             wurfdings.GetComponent<ItemBehaviour>().floating = true;
                             Debug.Log("joystick 1 Right Trigger");
                             GameObject.Find("ShowItem").GetComponent<ShowItemBehavior>().currentitem = 0;
-                            GameObject.Find("ShowItem").GetComponent<ShowItemBehavior>().itemcount--;
+                            GameObject.Find("ShowItem").GetComponent<ShowItemBehavior>().itemcount = 0;
+                            Debug.Log("!gehts? " + GameObject.Find("ShowItem").GetComponent<ShowItemBehavior>().itemcount);
+                            Debug.Log("PLAYER 1 Left Trigger");
                         }
-                        Debug.Log("PLAYER 1 Left Trigger");
+                        
                     }
                 }
                 if (Input.GetAxis("joystick "+ i +  " Right Trigger") == 1)    //RT

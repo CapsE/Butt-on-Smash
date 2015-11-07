@@ -19,24 +19,25 @@ public class ShowItemBehavior : MonoBehaviour {
 	void Update () {
         int comb = pipeline.GetComponent<PipelineBehavior>().currentCombo;
         if(currentitem == 0){
+            itemcount = 0;
             GetComponent<SpriteRenderer>().sprite = level0;
         }
 
-        if (5 <= comb && comb <= 9 && currentitem < 1)
+        if (5 <= comb && comb <= 9 && currentitem == 0)
         {
+            pipeline.GetComponent<PipelineBehavior>().currentCombo = 0;
             itemcount = 1;
-            currentitem++;
             Debug.Log("Item Level Up 1");
             currentitem = 1;
             GetComponent<SpriteRenderer>().sprite = level1;
         }
-        if (10 <= comb && comb <= 19 && currentitem < 2)
+        if (10 <= comb && comb <= 19 && currentitem == 1)
         {
             Debug.Log("Item Level Up 2");
             currentitem = 2;
             GetComponent<SpriteRenderer>().sprite = level2;
         }
-        if (20 <= comb && comb <= 25 && currentitem < 3)
+        if (20 <= comb && comb <= 25 && currentitem == 2)
         {
             Debug.Log("Item Level Up 3");
             currentitem = 3;

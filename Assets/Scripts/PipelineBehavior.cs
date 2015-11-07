@@ -35,9 +35,11 @@ public class PipelineBehavior : MonoBehaviour {
 	}
 
     void Update() {
+        bool hit = false;
         if(player == 1){
         if (Input.GetKeyDown("joystick button 0"))    //A
         {
+            
             Debug.Log("joy 1 but 0");
             foreach(GameObject c in activeButtons){
                 if (c.GetComponent<ButtonBehavior>().type == "A") {
@@ -46,11 +48,16 @@ public class PipelineBehavior : MonoBehaviour {
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
                         activeButtons.Remove(c);
                         Destroy(c);
+                        hit = true;
                         break;
+                    }
                 }
             }
+            if (!hit) {
+                GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
+            }
         }
-        }
+
         if (Input.GetKeyDown("joystick 1 button 1"))    //B
         {
             Debug.Log("joy 1 but 1");
@@ -63,9 +70,14 @@ public class PipelineBehavior : MonoBehaviour {
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
                         activeButtons.Remove(c);
                         Destroy(c);
+                        hit = true;
                         break;
                     }
                 }
+            }
+            if (!hit)
+            {
+                GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
             }
         }
         if (Input.GetKeyDown("joystick 1 button 2"))    //X
@@ -80,9 +92,14 @@ public class PipelineBehavior : MonoBehaviour {
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
                         activeButtons.Remove(c);
                         Destroy(c);
+                        hit = true;
                         break;
                     }
                 }
+            }
+            if (!hit)
+            {
+                GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
             }
         }
         if (Input.GetKeyDown("joystick 1 button 3"))    //Y
@@ -97,9 +114,14 @@ public class PipelineBehavior : MonoBehaviour {
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
                         activeButtons.Remove(c);
                         Destroy(c);
+                        hit = true;
                         break;
                     }
                 }
+            }
+            if (!hit)
+            {
+                GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
             }
         }
         }
@@ -117,9 +139,14 @@ public class PipelineBehavior : MonoBehaviour {
                             GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
                             activeButtons.Remove(c);
                             Destroy(c);
+                            hit = true;
                             break;
                         }
                     }
+                }
+                if (!hit)
+                {
+                    GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                 }
             }
             if (Input.GetKeyDown("joystick 2 button 1"))    //B
@@ -134,9 +161,14 @@ public class PipelineBehavior : MonoBehaviour {
                             GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
                             activeButtons.Remove(c);
                             Destroy(c);
+                            hit = true;
                             break;
                         }
                     }
+                }
+                if (!hit)
+                {
+                    GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                 }
             }
             if (Input.GetKeyDown("joystick 2 button 2"))    //X
@@ -151,9 +183,14 @@ public class PipelineBehavior : MonoBehaviour {
                             GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
                             activeButtons.Remove(c);
                             Destroy(c);
+                            hit = true;
                             break;
                         }
                     }
+                }
+                if (!hit)
+                {
+                    GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                 }
             }
             if (Input.GetKeyDown("joystick 2 button 3"))    //Y
@@ -168,9 +205,14 @@ public class PipelineBehavior : MonoBehaviour {
                             GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
                             activeButtons.Remove(c);
                             Destroy(c);
+                            hit = true;
                             break;
                         }
                     }
+                }
+                if (!hit)
+                {
+                    GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                 }
             }
         }

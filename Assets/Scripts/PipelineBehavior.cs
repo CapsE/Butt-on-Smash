@@ -71,7 +71,7 @@ public class PipelineBehavior : MonoBehaviour {
                             if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                             {
                                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
-                                Effect a = new Effect(c.transform, effect, 0.5f);
+                                Effect a = new Effect(c.transform.position, effect, 0.5f);
                                 activeButtons.Remove(c);
                                 Destroy(c);
                                 hit = true;
@@ -103,7 +103,7 @@ public class PipelineBehavior : MonoBehaviour {
                             if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                             {
                                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
-                                Effect a = new Effect(c.transform, effect, 0.5f);
+                                Effect a = new Effect(c.transform.position, effect, 0.5f);
                                 activeButtons.Remove(c);
                                 Destroy(c);
                                 hit = true;
@@ -134,7 +134,7 @@ public class PipelineBehavior : MonoBehaviour {
                             if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                             {
                                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
-                                Effect a = new Effect(c.transform, effect, 0.5f);
+                                Effect a = new Effect(c.transform.position, effect, 0.5f);
                                 activeButtons.Remove(c);
                                 Destroy(c);
                                 hit = true;
@@ -165,7 +165,7 @@ public class PipelineBehavior : MonoBehaviour {
                             if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                             {
                                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
-                                Effect a = new Effect(c.transform, effect, 0.5f);
+                                Effect a = new Effect(c.transform.position, effect, 0.5f);
                                 activeButtons.Remove(c);
                                 Destroy(c);
                                 hit = true;
@@ -203,7 +203,7 @@ public class PipelineBehavior : MonoBehaviour {
                             if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                             {
                                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
-                                Effect a = new Effect(c.transform, effect, 0.5f);
+                                Effect a = new Effect(c.transform.position, effect, 0.5f);
                                 activeButtons.Remove(c);
                                 Destroy(c);
                                 hit = true;
@@ -234,7 +234,7 @@ public class PipelineBehavior : MonoBehaviour {
                             if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                             {
                                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
-                                Effect a = new Effect(c.transform, effect, 0.5f);
+                                Effect a = new Effect(c.transform.position, effect, 0.5f);
                                 activeButtons.Remove(c);
                                 Destroy(c);
                                 hit = true;
@@ -265,7 +265,7 @@ public class PipelineBehavior : MonoBehaviour {
                             if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                             {
                                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
-                                Effect a = new Effect(c.transform, effect, 0.5f);
+                                Effect a = new Effect(c.transform.position, effect, 0.5f);
                                 activeButtons.Remove(c);
                                 Destroy(c);
                                 hit = true;
@@ -296,7 +296,7 @@ public class PipelineBehavior : MonoBehaviour {
                             if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                             {
                                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
-                                Effect a = new Effect(c.transform, effect, 0.5f);
+                                Effect a = new Effect(c.transform.position, effect, 0.5f);
                                 activeButtons.Remove(c);
                                 Destroy(c);
                                 hit = true;

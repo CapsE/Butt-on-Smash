@@ -75,8 +75,8 @@ public class RainBehaviour : MonoBehaviour {
 			}
 		}
 		if (Random.Range (0.0f, 100.0f) <= lightningChance) {
-			Effect e = new Effect(transform, lightningEffect, 0.3f);
-			Effect t = new Effect(transform, thunderEffect, 2.3f);
+			Effect e = new Effect(transform.position, lightningEffect, 0.3f);
+			Effect t = new Effect(transform.position, thunderEffect, 2.3f);
 		}
 	}
 }

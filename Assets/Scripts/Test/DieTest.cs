@@ -13,7 +13,7 @@ public class DieTest : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyUp(KeyCode.W)){
-			Effect dieEffect = new Effect(transform.position, effect, 1);
+			Effect dieEffect = new Effect(transform.position, effect, 4);
 		}
 	}
 }

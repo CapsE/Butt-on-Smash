@@ -6,6 +6,7 @@ public class PlayerBehaviour : MonoBehaviour
     public int player;
     public GameObject[] projectile;
     public float force;
+    
     //public int itemcount = 1;
     private float time;
 
@@ -28,6 +29,7 @@ public class PlayerBehaviour : MonoBehaviour
                 }
                 if (Input.GetKeyDown("joystick "+ i + " button 5"))    //RB
                 {
+                    gameObject.GetComponent<Animator>().Play("blocken2");
                     Debug.Log("PLAYER 1 Right Bumper");
                 }
                 if (Input.GetAxis("joystick " + i + " Left Trigger") == 1)    //LT

@@ -11,6 +11,7 @@ public class PipelineBehavior : MonoBehaviour {
     public float maxArea = -3.83f;
     public float minArea = -4.324f;
     public GameObject ButtonArea;
+    public int Player;
 
 	// Use this for initialization
 	void Start () {
@@ -31,15 +32,14 @@ public class PipelineBehavior : MonoBehaviour {
 	}
 
     void Update() {
+        if(Player == 1){
         if (Input.GetKeyDown("joystick 1 button 0"))    //A
         {
             Debug.Log("joy 1 but 0");
             foreach(GameObject c in activeButtons){
                 if (c.GetComponent<ButtonBehavior>().type == "A") {
-                    Debug.Log("A " + c.transform.position.y);
                     if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                     {
-                        Debug.Log("zerstoert");
                         activeButtons.Remove(c);
                         Destroy(c);
                         break;
@@ -50,18 +50,118 @@ public class PipelineBehavior : MonoBehaviour {
         if (Input.GetKeyDown("joystick 1 button 1"))    //B
         {
             Debug.Log("joy 1 but 1");
+            foreach (GameObject c in activeButtons)
+            {
+                if (c.GetComponent<ButtonBehavior>().type == "B")
+                {
+                    if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
+                    {
+                        activeButtons.Remove(c);
+                        Destroy(c);
+                        break;
+                    }
+                }
+            }
         }
         if (Input.GetKeyDown("joystick 1 button 2"))    //X
         {
             Debug.Log("joy 1 but 2");
+            foreach (GameObject c in activeButtons)
+            {
+                if (c.GetComponent<ButtonBehavior>().type == "X")
+                {
+                    if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
+                    {
+                        activeButtons.Remove(c);
+                        Destroy(c);
+                        break;
+                    }
+                }
+            }
         }
         if (Input.GetKeyDown("joystick 1 button 3"))    //Y
         {
             Debug.Log("joy 1 but 3");
+            foreach (GameObject c in activeButtons)
+            {
+                if (c.GetComponent<ButtonBehavior>().type == "Y")
+                {
+                    if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
+                    {
+                        activeButtons.Remove(c);
+                        Destroy(c);
+                        break;
+                    }
+                }
+            }
         }
-        if (Input.GetKeyDown("joystick 2 button 0"))
+        }
+        else if (Player == 2)
         {
-            Debug.Log("joy 2 but 0");
+            if (Input.GetKeyDown("joystick 2 button 0"))    //A
+            {
+                Debug.Log("joy 2 but 0");
+                foreach (GameObject c in activeButtons)
+                {
+                    if (c.GetComponent<ButtonBehavior>().type == "A")
+                    {
+                        if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
+                        {
+                            activeButtons.Remove(c);
+                            Destroy(c);
+                            break;
+                        }
+                    }
+                }
+            }
+            if (Input.GetKeyDown("joystick 2 button 1"))    //B
+            {
+                Debug.Log("joy 2 but 1");
+                foreach (GameObject c in activeButtons)
+                {
+                    if (c.GetComponent<ButtonBehavior>().type == "B")
+                    {
+                        if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
+                        {
+                            activeButtons.Remove(c);
+                            Destroy(c);
+                            break;
+                        }
+                    }
+                }
+            }
+            if (Input.GetKeyDown("joystick 2 button 2"))    //X
+            {
+                Debug.Log("joy 2 but 2");
+                foreach (GameObject c in activeButtons)
+                {
+                    if (c.GetComponent<ButtonBehavior>().type == "X")
+                    {
+                        if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
+                        {
+                            activeButtons.Remove(c);
+                            Destroy(c);
+                            break;
+                        }
+                    }
+                }
+            }
+            if (Input.GetKeyDown("joystick 2 button 3"))    //Y
+            {
+                Debug.Log("joy 2 but 3");
+                foreach (GameObject c in activeButtons)
+                {
+                    if (c.GetComponent<ButtonBehavior>().type == "Y")
+                    {
+                        if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
+                        {
+                            activeButtons.Remove(c);
+                            Destroy(c);
+                            break;
+                        }
+                    }
+                }
+            }
         }
     }
 }

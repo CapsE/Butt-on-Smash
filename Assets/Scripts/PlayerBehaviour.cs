@@ -42,17 +42,20 @@ public class PlayerBehaviour : MonoBehaviour
                             float input = Input.GetAxis("joystick " + i + " Up");
                             if (input <= 0.3 && input >= -0.3)
                             {
-                                wurfdings.transform.Rotate(0f, 0f, 35f);
+                                wurfdings.transform.Rotate(0f, 0f, 32f);
+                                wurfdings.GetComponent<Rigidbody2D>().AddForce(wurfdings.transform.right * force);
                             }
                             else if (input <= -0.3)
                             {
-                                wurfdings.transform.Rotate(0f, 0f, 60f);
+                                wurfdings.transform.Rotate(0f, 0f, 65f);
+                                wurfdings.GetComponent<Rigidbody2D>().AddForce(wurfdings.transform.right * force * 1.15f);
                             }
                             else if (input >= 0.3)
                             {
-                                wurfdings.transform.Rotate(0f, 0f, 20f);
+                                wurfdings.transform.Rotate(0f, 0f, 10f);
+                                wurfdings.GetComponent<Rigidbody2D>().AddForce(wurfdings.transform.right * force* 1.15f);
                             }
-                            wurfdings.GetComponent<Rigidbody2D>().AddForce(wurfdings.transform.right * force);
+                            
                             wurfdings.GetComponent<ItemBehaviour>().floating = true;
                             Debug.Log("joystick 1 Right Trigger");
                             itemcount--;

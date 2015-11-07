@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour {
     public GameObject number21;
     public GameObject number22;
     public GameObject number23;
-   
+    public GameObject newgametext;
 
     private bool end = false;
     private bool drehbool = false;
@@ -74,6 +74,9 @@ public class GameController : MonoBehaviour {
                 }
 
             }
+            if (Input.GetKeyDown("joystick 1 button 1")) {
+                Application.LoadLevel(0);
+            }
         }
 	}
 
@@ -110,7 +113,7 @@ public class GameController : MonoBehaviour {
             endText.GetComponent<TextMesh>().text = "spieler ii wird verschont";
             
         }
-
+        newgametext.GetComponent<TextMesh>().text = "a zum neustart"; 
         comboText2.GetComponent<TextMesh>().text = "max combo";
         number21.GetComponent<TextMesh>().text = "" + PipelineRight.GetComponent<PipelineBehavior>().maxCombo.ToString()[0];
         if (PipelineRight.GetComponent<PipelineBehavior>().maxCombo.ToString().Length >= 2)

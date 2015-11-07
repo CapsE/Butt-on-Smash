@@ -20,14 +20,18 @@ public class SkullBehavior : MonoBehaviour {
             Debug.Log("Die Goetter verschonen Player2");
             GameObject.Find("PipelineLeft").GetComponent<PipelineBehavior>().running = false;
             GameObject.Find("PipelineRight").GetComponent<PipelineBehavior>().running = false;
-            GameObject.Find("Main Camera").GetComponent<GameController>().SkullMalus = 0;
+            GameController cam = GameObject.Find("Main Camera").GetComponent<GameController>();
+            cam.SkullMalus = 0;
+            cam.finishScreen(2);
 
         }
         else if (posi == "right") {
             Debug.Log("Die Goetter verschonen Player1");
             GameObject.Find("PipelineLeft").GetComponent<PipelineBehavior>().running = false;
             GameObject.Find("PipelineRight").GetComponent<PipelineBehavior>().running = false;
-            GameObject.Find("Main Camera").GetComponent<GameController>().SkullMalus = 0;
+            GameController cam = GameObject.Find("Main Camera").GetComponent<GameController>();
+            cam.SkullMalus = 0;
+            cam.finishScreen(1);
         }
     }
 }

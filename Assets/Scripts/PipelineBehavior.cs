@@ -13,6 +13,12 @@ public class PipelineBehavior : MonoBehaviour {
     public GameObject ButtonArea;
     public int player;
     public float speed;
+    public bool running = true;
+
+    private int maxCombo;
+    private int currentCombo;
+    private int hits;
+    private int misses;
 
 	// Use this for initialization
 	void Start () {
@@ -21,16 +27,28 @@ public class PipelineBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        time += Time.deltaTime;
-        if (time >= intervall) {
-            //Debug.Log(Input.GetJoystickNames().Length);
-            
-            time = 0;
-            int buttonnr = Random.Range(0, 4);
-            GameObject button = Instantiate(buttons[buttonnr]) as GameObject;
-            activeButtons.Add(button);
-            button.transform.parent = this.transform;
-            button.transform.localPosition = new Vector3(spurbreite * buttonnr, 0, 0);
+        if (running)
+        {
+            time += Time.deltaTime;
+            if (time >= intervall)
+            {
+                //Debug.Log(Input.GetJoystickNames().Length);
+
+                time = 0;
+                int buttonnr = Random.Range(0, 4);
+                GameObject button = Instantiate(buttons[buttonnr]) as GameObject;
+                activeButtons.Add(button);
+                button.transform.parent = this.transform;
+                button.transform.localPosition = new Vector3(spurbreite * buttonnr, 0, 0);
+            }
+        }
+        else
+        {
+            foreach (GameObject go in activeButtons)
+            {
+                activeButtons.Remove(go);
+                Destroy(go);
+            }
         }
 	}
 
@@ -49,11 +67,18 @@ public class PipelineBehavior : MonoBehaviour {
                         activeButtons.Remove(c);
                         Destroy(c);
                         hit = true;
+                        hits++;
+                        currentCombo++;
+                        if (currentCombo > maxCombo) {
+                            maxCombo = currentCombo;
+                        }
                         break;
                     }
                 }
             }
             if (!hit) {
+                misses++;
+                currentCombo = 0;
                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
             }
         }
@@ -71,12 +96,20 @@ public class PipelineBehavior : MonoBehaviour {
                         activeButtons.Remove(c);
                         Destroy(c);
                         hit = true;
+                        hits++;
+                        currentCombo++;
+                        if (currentCombo > maxCombo)
+                        {
+                            maxCombo = currentCombo;
+                        }
                         break;
                     }
                 }
             }
             if (!hit)
             {
+                misses++;
+                currentCombo = 0;
                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
             }
         }
@@ -93,12 +126,20 @@ public class PipelineBehavior : MonoBehaviour {
                         activeButtons.Remove(c);
                         Destroy(c);
                         hit = true;
+                        hits++;
+                        currentCombo++;
+                        if (currentCombo > maxCombo)
+                        {
+                            maxCombo = currentCombo;
+                        }
                         break;
                     }
                 }
             }
             if (!hit)
             {
+                misses++;
+                currentCombo = 0;
                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
             }
         }
@@ -115,12 +156,20 @@ public class PipelineBehavior : MonoBehaviour {
                         activeButtons.Remove(c);
                         Destroy(c);
                         hit = true;
+                        hits++;
+                        currentCombo++;
+                        if (currentCombo > maxCombo)
+                        {
+                            maxCombo = currentCombo;
+                        }
                         break;
                     }
                 }
             }
             if (!hit)
             {
+                misses++;
+                currentCombo = 0;
                 GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
             }
         }
@@ -140,12 +189,20 @@ public class PipelineBehavior : MonoBehaviour {
                             activeButtons.Remove(c);
                             Destroy(c);
                             hit = true;
+                            hits++;
+                            currentCombo++;
+                            if (currentCombo > maxCombo)
+                            {
+                                maxCombo = currentCombo;
+                            }
                             break;
                         }
                     }
                 }
                 if (!hit)
                 {
+                    misses++;
+                    currentCombo = 0;
                     GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                 }
             }
@@ -162,12 +219,20 @@ public class PipelineBehavior : MonoBehaviour {
                             activeButtons.Remove(c);
                             Destroy(c);
                             hit = true;
+                            hits++;
+                            currentCombo++;
+                            if (currentCombo > maxCombo)
+                            {
+                                maxCombo = currentCombo;
+                            }
                             break;
                         }
                     }
                 }
                 if (!hit)
                 {
+                    misses++;
+                    currentCombo = 0;
                     GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                 }
             }
@@ -184,12 +249,20 @@ public class PipelineBehavior : MonoBehaviour {
                             activeButtons.Remove(c);
                             Destroy(c);
                             hit = true;
+                            hits++;
+                            currentCombo++;
+                            if (currentCombo > maxCombo)
+                            {
+                                maxCombo = currentCombo;
+                            }
                             break;
                         }
                     }
                 }
                 if (!hit)
                 {
+                    misses++;
+                    currentCombo = 0;
                     GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                 }
             }
@@ -206,12 +279,20 @@ public class PipelineBehavior : MonoBehaviour {
                             activeButtons.Remove(c);
                             Destroy(c);
                             hit = true;
+                            hits++;
+                            currentCombo++;
+                            if (currentCombo > maxCombo)
+                            {
+                                maxCombo = currentCombo;
+                            }
                             break;
                         }
                     }
                 }
                 if (!hit)
                 {
+                    misses++;
+                    currentCombo = 0;
                     GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                 }
             }

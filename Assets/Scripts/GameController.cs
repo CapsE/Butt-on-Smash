@@ -74,7 +74,7 @@ public class GameController : MonoBehaviour {
                 }
 
             }
-            if (Input.GetKeyDown("joystick 1 button 1")) {
+            if (Input.GetKeyDown("joystick 1 button 0")) {
                 Application.LoadLevel(0);
             }
         }

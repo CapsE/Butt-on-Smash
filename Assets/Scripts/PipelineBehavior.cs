@@ -57,253 +57,265 @@ public class PipelineBehavior : MonoBehaviour {
     void Update() {
         bool hit = false;
         if(player == 1){
-        if (Input.GetKeyDown("joystick button 0"))    //A
-        {
-            
-            Debug.Log("joy 1 but 0");
-            foreach(GameObject c in activeButtons){
-                if (c.GetComponent<ButtonBehavior>().type == "A") {
-                    if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
-                    {
-                        GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
-                        Effect a = new Effect(c.transform, effect, 0.5f);
-                        activeButtons.Remove(c);
-                        Destroy(c);
-                        hit = true;
-                        hits++;
-                        currentCombo++;
-                        if (currentCombo > maxCombo) {
-                            maxCombo = currentCombo;
-                        }
-                        break;
-                    }
-                }
-            }
-            if (!hit) {
-                misses++;
-                currentCombo = 0;
-                GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
-            }
-        }
+            for (int i = 1; i <= 11; i = i + 2)
+            {
 
-        if (Input.GetKeyDown("joystick 1 button 1"))    //B
-        {
-            Debug.Log("joy 1 but 1");
-            foreach (GameObject c in activeButtons)
-            {
-                if (c.GetComponent<ButtonBehavior>().type == "B")
+                if (Input.GetKeyDown("joystick " + i +" button 0"))    //A
                 {
-                    if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
+
+                    Debug.Log("player 1 but 0");
+                    foreach (GameObject c in activeButtons)
                     {
-                        GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
-                        Effect a = new Effect(c.transform, effect, 0.5f);
-                        activeButtons.Remove(c);
-                        Destroy(c);
-                        hit = true;
-                        hits++;
-                        currentCombo++;
-                        if (currentCombo > maxCombo)
+                        if (c.GetComponent<ButtonBehavior>().type == "A")
                         {
-                            maxCombo = currentCombo;
+                            if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
+                            {
+                                GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                                Effect a = new Effect(c.transform, effect, 0.5f);
+                                activeButtons.Remove(c);
+                                Destroy(c);
+                                hit = true;
+                                hits++;
+                                currentCombo++;
+                                if (currentCombo > maxCombo)
+                                {
+                                    maxCombo = currentCombo;
+                                }
+                                break;
+                            }
                         }
-                        break;
+                    }
+                    if (!hit)
+                    {
+                        misses++;
+                        currentCombo = 0;
+                        GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                     }
                 }
-            }
-            if (!hit)
-            {
-                misses++;
-                currentCombo = 0;
-                GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
-            }
-        }
-        if (Input.GetKeyDown("joystick 1 button 2"))    //X
-        {
-            Debug.Log("joy 1 but 2");
-            foreach (GameObject c in activeButtons)
-            {
-                if (c.GetComponent<ButtonBehavior>().type == "X")
+
+                if (Input.GetKeyDown("joystick " + i + " button 1"))    //B
                 {
-                    if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
+                    Debug.Log("player 1 but 1");
+                    foreach (GameObject c in activeButtons)
                     {
-                        GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
-                        Effect a = new Effect(c.transform, effect, 0.5f);
-                        activeButtons.Remove(c);
-                        Destroy(c);
-                        hit = true;
-                        hits++;
-                        currentCombo++;
-                        if (currentCombo > maxCombo)
+                        if (c.GetComponent<ButtonBehavior>().type == "B")
                         {
-                            maxCombo = currentCombo;
+                            if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
+                            {
+                                GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                                Effect a = new Effect(c.transform, effect, 0.5f);
+                                activeButtons.Remove(c);
+                                Destroy(c);
+                                hit = true;
+                                hits++;
+                                currentCombo++;
+                                if (currentCombo > maxCombo)
+                                {
+                                    maxCombo = currentCombo;
+                                }
+                                break;
+                            }
                         }
-                        break;
+                    }
+                    if (!hit)
+                    {
+                        misses++;
+                        currentCombo = 0;
+                        GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                     }
                 }
-            }
-            if (!hit)
-            {
-                misses++;
-                currentCombo = 0;
-                GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
-            }
-        }
-        if (Input.GetKeyDown("joystick 1 button 3"))    //Y
-        {
-            Debug.Log("joy 1 but 3");
-            foreach (GameObject c in activeButtons)
-            {
-                if (c.GetComponent<ButtonBehavior>().type == "Y")
+                if (Input.GetKeyDown("joystick " + i + " button 2"))    //X
                 {
-                    if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
+                    Debug.Log("player 1 but 2");
+                    foreach (GameObject c in activeButtons)
                     {
-                        GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
-                        Effect a = new Effect(c.transform, effect, 0.5f);
-                        activeButtons.Remove(c);
-                        Destroy(c);
-                        hit = true;
-                        hits++;
-                        currentCombo++;
-                        if (currentCombo > maxCombo)
+                        if (c.GetComponent<ButtonBehavior>().type == "X")
                         {
-                            maxCombo = currentCombo;
+                            if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
+                            {
+                                GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                                Effect a = new Effect(c.transform, effect, 0.5f);
+                                activeButtons.Remove(c);
+                                Destroy(c);
+                                hit = true;
+                                hits++;
+                                currentCombo++;
+                                if (currentCombo > maxCombo)
+                                {
+                                    maxCombo = currentCombo;
+                                }
+                                break;
+                            }
                         }
-                        break;
+                    }
+                    if (!hit)
+                    {
+                        misses++;
+                        currentCombo = 0;
+                        GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                     }
                 }
+                if (Input.GetKeyDown("joystick " + i + " button 3"))    //Y
+                {
+                    Debug.Log("palyer 1 but 3");
+                    foreach (GameObject c in activeButtons)
+                    {
+                        if (c.GetComponent<ButtonBehavior>().type == "Y")
+                        {
+                            if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
+                            {
+                                GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                                Effect a = new Effect(c.transform, effect, 0.5f);
+                                activeButtons.Remove(c);
+                                Destroy(c);
+                                hit = true;
+                                hits++;
+                                currentCombo++;
+                                if (currentCombo > maxCombo)
+                                {
+                                    maxCombo = currentCombo;
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    if (!hit)
+                    {
+                        misses++;
+                        currentCombo = 0;
+                        GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
+                    }
+                }
+
             }
-            if (!hit)
-            {
-                misses++;
-                currentCombo = 0;
-                GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
-            }
-        }
         }
         else if (player == 2)
         {
-            if (Input.GetKeyDown("joystick 2 button 0"))    //A
+            for (int i = 2; i <= 11; i = i + 2)
             {
-                Debug.Log("joy 2 but 0");
-                foreach (GameObject c in activeButtons)
+                if (Input.GetKeyDown("joystick " + i + " button 0"))    //A
                 {
-                    if (c.GetComponent<ButtonBehavior>().type == "A")
+                    Debug.Log("Player 2 but 0");
+                    foreach (GameObject c in activeButtons)
                     {
-                        if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
+                        if (c.GetComponent<ButtonBehavior>().type == "A")
                         {
-                            GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
-                            Effect a = new Effect(c.transform, effect, 0.5f);
-                            activeButtons.Remove(c);
-                            Destroy(c);
-                            hit = true;
-                            hits++;
-                            currentCombo++;
-                            if (currentCombo > maxCombo)
+                            if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                             {
-                                maxCombo = currentCombo;
+                                GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                                Effect a = new Effect(c.transform, effect, 0.5f);
+                                activeButtons.Remove(c);
+                                Destroy(c);
+                                hit = true;
+                                hits++;
+                                currentCombo++;
+                                if (currentCombo > maxCombo)
+                                {
+                                    maxCombo = currentCombo;
+                                }
+                                break;
                             }
-                            break;
                         }
                     }
-                }
-                if (!hit)
-                {
-                    misses++;
-                    currentCombo = 0;
-                    GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
-                }
-            }
-            if (Input.GetKeyDown("joystick 2 button 1"))    //B
-            {
-                Debug.Log("joy 2 but 1");
-                foreach (GameObject c in activeButtons)
-                {
-                    if (c.GetComponent<ButtonBehavior>().type == "B")
+                    if (!hit)
                     {
-                        if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
-                        {
-                            GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
-                            Effect a = new Effect(c.transform, effect, 0.5f);
-                            activeButtons.Remove(c);
-                            Destroy(c);
-                            hit = true;
-                            hits++;
-                            currentCombo++;
-                            if (currentCombo > maxCombo)
-                            {
-                                maxCombo = currentCombo;
-                            }
-                            break;
-                        }
+                        misses++;
+                        currentCombo = 0;
+                        GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                     }
                 }
-                if (!hit)
+                if (Input.GetKeyDown("joystick " + i + " button 1"))    //B
                 {
-                    misses++;
-                    currentCombo = 0;
-                    GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
-                }
-            }
-            if (Input.GetKeyDown("joystick 2 button 2"))    //X
-            {
-                Debug.Log("joy 2 but 2");
-                foreach (GameObject c in activeButtons)
-                {
-                    if (c.GetComponent<ButtonBehavior>().type == "X")
+                    Debug.Log("player 2 but 1");
+                    foreach (GameObject c in activeButtons)
                     {
-                        if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
+                        if (c.GetComponent<ButtonBehavior>().type == "B")
                         {
-                            GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
-                            Effect a = new Effect(c.transform, effect, 0.5f);
-                            activeButtons.Remove(c);
-                            Destroy(c);
-                            hit = true;
-                            hits++;
-                            currentCombo++;
-                            if (currentCombo > maxCombo)
+                            if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                             {
-                                maxCombo = currentCombo;
+                                GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                                Effect a = new Effect(c.transform, effect, 0.5f);
+                                activeButtons.Remove(c);
+                                Destroy(c);
+                                hit = true;
+                                hits++;
+                                currentCombo++;
+                                if (currentCombo > maxCombo)
+                                {
+                                    maxCombo = currentCombo;
+                                }
+                                break;
                             }
-                            break;
                         }
                     }
-                }
-                if (!hit)
-                {
-                    misses++;
-                    currentCombo = 0;
-                    GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
-                }
-            }
-            if (Input.GetKeyDown("joystick 2 button 3"))    //Y
-            {
-                Debug.Log("joy 2 but 3");
-                foreach (GameObject c in activeButtons)
-                {
-                    if (c.GetComponent<ButtonBehavior>().type == "Y")
+                    if (!hit)
                     {
-                        if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
-                        {
-                            GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
-                            Effect a = new Effect(c.transform, effect, 0.5f);
-                            activeButtons.Remove(c);
-                            Destroy(c);
-                            hit = true;
-                            hits++;
-                            currentCombo++;
-                            if (currentCombo > maxCombo)
-                            {
-                                maxCombo = currentCombo;
-                            }
-                            break;
-                        }
+                        misses++;
+                        currentCombo = 0;
+                        GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                     }
                 }
-                if (!hit)
+                if (Input.GetKeyDown("joystick " + i + " button 2"))    //X
                 {
-                    misses++;
-                    currentCombo = 0;
-                    GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
+                    Debug.Log("player 2 but 2");
+                    foreach (GameObject c in activeButtons)
+                    {
+                        if (c.GetComponent<ButtonBehavior>().type == "X")
+                        {
+                            if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
+                            {
+                                GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                                Effect a = new Effect(c.transform, effect, 0.5f);
+                                activeButtons.Remove(c);
+                                Destroy(c);
+                                hit = true;
+                                hits++;
+                                currentCombo++;
+                                if (currentCombo > maxCombo)
+                                {
+                                    maxCombo = currentCombo;
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    if (!hit)
+                    {
+                        misses++;
+                        currentCombo = 0;
+                        GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
+                    }
+                }
+                if (Input.GetKeyDown("joystick " + i + " button 3"))    //Y
+                {
+                    Debug.Log("player 2 but 3");
+                    foreach (GameObject c in activeButtons)
+                    {
+                        if (c.GetComponent<ButtonBehavior>().type == "Y")
+                        {
+                            if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
+                            {
+                                GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
+                                Effect a = new Effect(c.transform, effect, 0.5f);
+                                activeButtons.Remove(c);
+                                Destroy(c);
+                                hit = true;
+                                hits++;
+                                currentCombo++;
+                                if (currentCombo > maxCombo)
+                                {
+                                    maxCombo = currentCombo;
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    if (!hit)
+                    {
+                        misses++;
+                        currentCombo = 0;
+                        GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
+                    }
                 }
             }
         }

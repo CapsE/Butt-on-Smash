@@ -39,6 +39,23 @@ public class HitboxBehavior : MonoBehaviour {
                         Effect e = new Effect(transform.position, dropEffect, 4);
                     }
                 }
+
+                
+         if (coll.gameObject.GetComponent<ItemBehaviour>().level == 2)
+                    {
+                        for (int i = 0; i < 8; i++) { 
+                            gc.MoveSkull(2);
+                        }
+                        
+                    }
+                    
+                    if (coll.gameObject.GetComponent<ItemBehaviour>().level == 3)
+                    {
+                        for (int i = 0; i < 12; i++) { 
+                            gc.MoveSkull(2);
+                        }
+                        
+                    }
                 Destroy(coll.gameObject); //TODO effekt?   
             }
         }
@@ -52,12 +69,26 @@ public class HitboxBehavior : MonoBehaviour {
                 {
                     if (coll.gameObject.GetComponent<ItemBehaviour>().level == 1)
                     {
-                        gc.MoveSkull(1);
-                        gc.MoveSkull(1);
-                        gc.MoveSkull(1);
-                        gc.MoveSkull(1);
-                        gc.MoveSkull(1);
+                        for (int i = 0; i < 5; i++) { 
+                            gc.MoveSkull(1);
+                        }
                         Effect e = new Effect(transform.position, dropEffect, 4);
+                    }
+                  
+                    if (coll.gameObject.GetComponent<ItemBehaviour>().level == 2)
+                    {
+                        for (int i = 0; i < 8; i++) { 
+                            gc.MoveSkull(1);
+                        }
+                        
+                    }
+                    
+                    if (coll.gameObject.GetComponent<ItemBehaviour>().level == 3)
+                    {
+                        for (int i = 0; i < 12; i++) { 
+                            gc.MoveSkull(1);
+                        }
+                        
                     }
                 }
                

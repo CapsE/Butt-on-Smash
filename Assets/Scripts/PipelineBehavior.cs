@@ -17,6 +17,7 @@ public class PipelineBehavior : MonoBehaviour {
 
     public int maxCombo;
     public int currentCombo;
+    private int Combo;
     private int hits;
     private int misses;
 
@@ -89,9 +90,10 @@ public class PipelineBehavior : MonoBehaviour {
                                 hit = true;
                                 hits++;
                                 currentCombo++;
-                                if (currentCombo > maxCombo)
+                                Combo++;
+                                if (Combo > maxCombo)
                                 {
-                                    maxCombo = currentCombo;
+                                    maxCombo = Combo;
                                 }
                                 break;
                             }
@@ -105,6 +107,7 @@ public class PipelineBehavior : MonoBehaviour {
                             ButtonMissed();
                         }
                         currentCombo = 0;
+                        Combo = 0;
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                         ButtonArea.GetComponent<ShakeBehaviour>().Shake(0.4f);
                     }
@@ -131,9 +134,10 @@ public class PipelineBehavior : MonoBehaviour {
                                 hit = true;
                                 hits++;
                                 currentCombo++;
-                                if (currentCombo > maxCombo)
+                                Combo++;
+                                if (Combo > maxCombo)
                                 {
-                                    maxCombo = currentCombo;
+                                    maxCombo = Combo;
                                 }
                                 break;
                             }
@@ -147,6 +151,7 @@ public class PipelineBehavior : MonoBehaviour {
                             ButtonMissed();
                         }
                         currentCombo = 0;
+                        Combo = 0;
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                         ButtonArea.GetComponent<ShakeBehaviour>().Shake(0.4f);
                     }
@@ -172,9 +177,10 @@ public class PipelineBehavior : MonoBehaviour {
                                 hit = true;
                                 hits++;
                                 currentCombo++;
-                                if (currentCombo > maxCombo)
+                                Combo++;
+                                if (Combo > maxCombo)
                                 {
-                                    maxCombo = currentCombo;
+                                    maxCombo = Combo;
                                 }
                                 break;
                             }
@@ -188,6 +194,7 @@ public class PipelineBehavior : MonoBehaviour {
                             ButtonMissed();
                         }
                         currentCombo = 0;
+                        Combo = 0;
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                         ButtonArea.GetComponent<ShakeBehaviour>().Shake(0.4f);
                     }
@@ -213,9 +220,10 @@ public class PipelineBehavior : MonoBehaviour {
                                 hit = true;
                                 hits++;
                                 currentCombo++;
-                                if (currentCombo > maxCombo)
+                                Combo++;
+                                if (Combo > maxCombo)
                                 {
-                                    maxCombo = currentCombo;
+                                    maxCombo = Combo;
                                 }
                                 break;
                             }
@@ -229,6 +237,7 @@ public class PipelineBehavior : MonoBehaviour {
                             ButtonMissed();
                         }
                         currentCombo = 0;
+                        Combo = 0;
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                         ButtonArea.GetComponent<ShakeBehaviour>().Shake(0.4f);
                     }
@@ -261,9 +270,10 @@ public class PipelineBehavior : MonoBehaviour {
                                 hit = true;
                                 hits++;
                                 currentCombo++;
-                                if (currentCombo > maxCombo)
+                                Combo++;
+                                if (Combo > maxCombo)
                                 {
-                                    maxCombo = currentCombo;
+                                    maxCombo = Combo;
                                 }
                                 break;
                             }
@@ -277,6 +287,7 @@ public class PipelineBehavior : MonoBehaviour {
                             ButtonMissed();
                         }
                         currentCombo = 0;
+                        Combo = 0;
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                         ButtonArea.GetComponent<ShakeBehaviour>().Shake(0.4f);
                     }
@@ -302,9 +313,10 @@ public class PipelineBehavior : MonoBehaviour {
                                 hit = true;
                                 hits++;
                                 currentCombo++;
-                                if (currentCombo > maxCombo)
+                                Combo++;
+                                if (Combo > maxCombo)
                                 {
-                                    maxCombo = currentCombo;
+                                    maxCombo = Combo;
                                 }
                                 break;
                             }
@@ -318,6 +330,7 @@ public class PipelineBehavior : MonoBehaviour {
                             ButtonMissed();
                         }
                         currentCombo = 0;
+                        Combo = 0;
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                         ButtonArea.GetComponent<ShakeBehaviour>().Shake(0.4f);
                     }
@@ -343,9 +356,10 @@ public class PipelineBehavior : MonoBehaviour {
                                 hit = true;
                                 hits++;
                                 currentCombo++;
-                                if (currentCombo > maxCombo)
+                                Combo++;
+                                if (Combo > maxCombo)
                                 {
-                                    maxCombo = currentCombo;
+                                    maxCombo = Combo;
                                 }
                                 break;
                             }
@@ -359,6 +373,7 @@ public class PipelineBehavior : MonoBehaviour {
                             ButtonMissed();
                         }
                         currentCombo = 0;
+                        Combo = 0;
                         GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkullMalus(player);
                         ButtonArea.GetComponent<ShakeBehaviour>().Shake(0.4f);
                     }
@@ -384,9 +399,10 @@ public class PipelineBehavior : MonoBehaviour {
                                 hit = true;
                                 hits++;
                                 currentCombo++;
-                                if (currentCombo > maxCombo)
+                                Combo++;
+                                if (Combo > maxCombo)
                                 {
-                                    maxCombo = currentCombo;
+                                    maxCombo = Combo;
                                 }
                                 break;
                             }
@@ -396,6 +412,7 @@ public class PipelineBehavior : MonoBehaviour {
                     {
                         misses++;
                         currentCombo = 0;
+                        Combo = 0;
                         if (ButtonMissed != null)
                         {
                             ButtonMissed();

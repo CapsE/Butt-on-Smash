@@ -41,6 +41,14 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        for (int i = 1; i <= 11; i++)
+        {
+            if (Input.GetKeyDown("joystick " + i + " button 6"))
+            {
+                Application.Quit();
+            }
+        }
+
         PipelineLeft.GetComponent<PipelineBehavior>().speed = Math.Abs(Skull.transform.position.x)*speedInc + 0.12f;
         PipelineLeft.GetComponent<PipelineBehavior>().intervall = 0.5f - Math.Abs(Skull.transform.position.x) * intervallInc;
         PipelineRight.GetComponent<PipelineBehavior>().speed = Math.Abs(Skull.transform.position.x) * speedInc + 0.12f;

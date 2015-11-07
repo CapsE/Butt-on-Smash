@@ -92,6 +92,7 @@ public class GameController : MonoBehaviour {
         {
             Skull.transform.Translate(Vector3.left * SkullSpeed);
         }
+		SkullMoved (Skull.transform.position.x);
     }
     public void MoveSkullMalus(int player)
     {
@@ -103,6 +104,7 @@ public class GameController : MonoBehaviour {
         {
             Skull.transform.Translate(Vector3.left * SkullMalus);
         }
+		SkullMoved (Skull.transform.position.x);
     }
 
     public void finishScreen(int Player) {

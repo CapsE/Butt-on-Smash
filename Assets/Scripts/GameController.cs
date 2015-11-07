@@ -23,6 +23,8 @@ public class GameController : MonoBehaviour {
     public GameObject number22;
     public GameObject number23;
     public GameObject newgametext;
+    public GameObject player1;
+    public GameObject player2;
 
     private bool end = false;
     private bool drehbool = false;
@@ -113,11 +115,13 @@ public class GameController : MonoBehaviour {
         end = true;
         if (Player == 1)
         {
+            player2.GetComponent<Animation>().CrossFade("Sterben");
             endText.GetComponent<TextMesh>().text = "spieler i wird verschont";
                
         }
         else
         {
+            player1.GetComponent<Animation>().CrossFade("Sterben");
             endText.GetComponent<TextMesh>().text = "spieler ii wird verschont";
             
         }

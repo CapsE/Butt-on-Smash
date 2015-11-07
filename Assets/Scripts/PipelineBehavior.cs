@@ -16,7 +16,7 @@ public class PipelineBehavior : MonoBehaviour {
     public bool running = true;
 
     public int maxCombo;
-    private int currentCombo;
+    public int currentCombo;
     private int hits;
     private int misses;
 

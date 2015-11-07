@@ -5,6 +5,8 @@ public class HitboxBehavior : MonoBehaviour {
     public int position;
     public int topf; //0 ist links, 1 ist rechts
 
+    public GameObject dropEffect;
+
 
 	// Use this for initialization
 	void Start () {
@@ -34,6 +36,7 @@ public class HitboxBehavior : MonoBehaviour {
                         gc.MoveSkull(2);
                         gc.MoveSkull(2);
                         gc.MoveSkull(2);
+                        Effect e = new Effect(transform.position, dropEffect, 4);
                     }
                 }
                 Destroy(coll.gameObject); //TODO effekt?   
@@ -54,8 +57,10 @@ public class HitboxBehavior : MonoBehaviour {
                         gc.MoveSkull(1);
                         gc.MoveSkull(1);
                         gc.MoveSkull(1);
+                        Effect e = new Effect(transform.position, dropEffect, 4);
                     }
                 }
+               
                 Destroy(coll.gameObject); //TODO effekt?
             }
         }

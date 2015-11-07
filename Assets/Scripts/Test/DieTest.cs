@@ -7,8 +7,13 @@ public class DieTest : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        GameController.SkullMoved += Spawn;
 	}
+
+    void Spawn(float f)
+    {
+        Effect dieEffect = new Effect(transform.position, effect, 4);
+    }
 	
 	// Update is called once per frame
 	void Update () {

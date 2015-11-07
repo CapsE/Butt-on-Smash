@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        SkullMoved = null;
 	}
 	
 	// Update is called once per frame
@@ -120,14 +120,14 @@ public class GameController : MonoBehaviour {
             endText.GetComponent<TextMesh>().text = "spieler i wird verschont";
             Effect e = new Effect(player2.transform.position, lightningStrikeEffect, 4);
             player2.GetComponent<Animator>().Play("Sterben");
-            Debug.Break();
+            player2.GetComponent<PlayerBehaviour>().deathEffect.SetActive(true);
         }
         else
         {
             endText.GetComponent<TextMesh>().text = "spieler ii wird verschont";
-            Effect e = new Effect(player1.transform.position, lightningStrikeEffect, 4);
             player1.GetComponent<Animator>().Play("Sterben");
-            Debug.Break();
+            Effect e = new Effect(player1.transform.position, lightningStrikeEffect, 4);
+            player1.GetComponent<PlayerBehaviour>().deathEffect.SetActive(true);
         }
         newgametext.GetComponent<TextMesh>().text = "start zum neustart"; 
         comboText2.GetComponent<TextMesh>().text = "max combo";

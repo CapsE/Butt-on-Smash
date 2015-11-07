@@ -6,6 +6,7 @@ public class PlayerBehaviour : MonoBehaviour
     public int player;
     public GameObject[] projectile;
     public float force;
+    public GameObject deathEffect;
     
     //public int itemcount = 1;
     private float time1;

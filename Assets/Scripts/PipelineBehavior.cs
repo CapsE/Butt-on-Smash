@@ -11,7 +11,7 @@ public class PipelineBehavior : MonoBehaviour {
     public float maxArea = -3.83f;
     public float minArea = -4.324f;
     public GameObject ButtonArea;
-    public int Player;
+    public int player;
     public float speed;
 
 	// Use this for initialization
@@ -33,7 +33,7 @@ public class PipelineBehavior : MonoBehaviour {
 	}
 
     void Update() {
-        if(Player == 1){
+        if(player == 1){
         if (Input.GetKeyDown("joystick 1 button 0"))    //A
         {
             Debug.Log("joy 1 but 0");
@@ -41,6 +41,7 @@ public class PipelineBehavior : MonoBehaviour {
                 if (c.GetComponent<ButtonBehavior>().type == "A") {
                     if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                     {
+                        GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
                         activeButtons.Remove(c);
                         Destroy(c);
                         break;
@@ -57,6 +58,7 @@ public class PipelineBehavior : MonoBehaviour {
                 {
                     if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                     {
+                        GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
                         activeButtons.Remove(c);
                         Destroy(c);
                         break;
@@ -73,6 +75,7 @@ public class PipelineBehavior : MonoBehaviour {
                 {
                     if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                     {
+                        GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
                         activeButtons.Remove(c);
                         Destroy(c);
                         break;
@@ -89,6 +92,7 @@ public class PipelineBehavior : MonoBehaviour {
                 {
                     if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                     {
+                        GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
                         activeButtons.Remove(c);
                         Destroy(c);
                         break;
@@ -97,7 +101,7 @@ public class PipelineBehavior : MonoBehaviour {
             }
         }
         }
-        else if (Player == 2)
+        else if (player == 2)
         {
             if (Input.GetKeyDown("joystick 2 button 0"))    //A
             {
@@ -108,6 +112,7 @@ public class PipelineBehavior : MonoBehaviour {
                     {
                         if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                         {
+                            GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
                             activeButtons.Remove(c);
                             Destroy(c);
                             break;
@@ -124,6 +129,7 @@ public class PipelineBehavior : MonoBehaviour {
                     {
                         if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                         {
+                            GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
                             activeButtons.Remove(c);
                             Destroy(c);
                             break;
@@ -140,6 +146,7 @@ public class PipelineBehavior : MonoBehaviour {
                     {
                         if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                         {
+                            GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
                             activeButtons.Remove(c);
                             Destroy(c);
                             break;
@@ -156,6 +163,7 @@ public class PipelineBehavior : MonoBehaviour {
                     {
                         if (c.GetComponent<BoxCollider2D>().IsTouching(ButtonArea.GetComponent<BoxCollider2D>()))
                         {
+                            GameObject.Find("Main Camera").GetComponent<GameController>().MoveSkull(player);
                             activeButtons.Remove(c);
                             Destroy(c);
                             break;

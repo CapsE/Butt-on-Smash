@@ -17,6 +17,6 @@ public class ColliderTest : MonoBehaviour {
         Debug.Log("collision");
     }
     void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Trigger");
+        //Debug.Log("Trigger");
     }
 }

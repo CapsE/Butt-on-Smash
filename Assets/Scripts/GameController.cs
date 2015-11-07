@@ -115,13 +115,11 @@ public class GameController : MonoBehaviour {
         end = true;
         if (Player == 1)
         {
-            player2.GetComponent<Animation>().CrossFade("Sterben");
             endText.GetComponent<TextMesh>().text = "spieler i wird verschont";
                
         }
         else
         {
-            player1.GetComponent<Animation>().CrossFade("Sterben");
             endText.GetComponent<TextMesh>().text = "spieler ii wird verschont";
             
         }

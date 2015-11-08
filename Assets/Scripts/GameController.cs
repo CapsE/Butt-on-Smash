@@ -90,7 +90,7 @@ public class GameController : MonoBehaviour {
             {
                 if (Input.GetKeyDown("joystick " + i +" button 7"))
                 {
-                    Application.LoadLevel(0);
+                    Application.LoadLevel(1);
                 }
             }
         }
